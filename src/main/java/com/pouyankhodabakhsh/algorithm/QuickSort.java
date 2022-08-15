@@ -6,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 public class QuickSort {
 
@@ -15,7 +14,7 @@ public class QuickSort {
 
         Configuration configuration = Configuration.getInstance();
         String filepath = configuration.getFilepath();
-        File file = new File(filepath + "quickSort.txt");
+        File file = new File(filepath + "files/quickSort.txt");
         int lineNumber = 0;
         int[] array = new int[10000];
         for (String num : FileUtils.readLines(file, StandardCharsets.UTF_8)) {

@@ -1,13 +1,10 @@
 package com.pouyankhodabakhsh.algorithm;
 
-import com.google.common.math.IntMath;
-import com.google.common.math.LongMath;
 import com.pouyankhodabakhsh.algorithm.config.Configuration;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
@@ -18,7 +15,7 @@ public class Inversions {
 
         Configuration configuration = Configuration.getInstance();
         String filepath = configuration.getFilepath();
-        File file = new File(filepath + "IntegerArray.txt");
+        File file = new File(filepath + "files/IntegerArray.txt");
         int lineNumber = 0;
         int[] array = new int[100000];
         for (String num : FileUtils.readLines(file, StandardCharsets.UTF_8)) {
