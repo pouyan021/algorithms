@@ -11,17 +11,18 @@ public class GraphUtils {
 
     public static Graph createGraph(List<String> lines) throws IOException {
 
-        Multimap<Integer, Integer> edges = ArrayListMultimap.create();
-        for (String line : lines) {
-            String[] columns = line.split("\t");
-            Integer v = Integer.parseInt(columns[0]);
-            for (int j = 1; j < columns.length; j++) {
-                int e = Integer.parseInt(columns[j]);
-                edges.put(v, e);
-            }
-        }
-        Graph graph = new Graph();
-        graph.setEdges(edges);
-        return graph;
+//        Multimap<Integer, Integer> edges = ArrayListMultimap.create();
+//        for (String line : lines) {
+//            String[] columns = line.split("\t");
+//            Integer v = Integer.parseInt(columns[0]);
+//            for (int j = 1; j < columns.length; j++) {
+//                int e = Integer.parseInt(columns[j]);
+//                edges.put(v, e);
+//            }
+//        }
+//        Graph graph = new Graph();
+//        graph.setEdges(edges);
+//        return graph;
+        return null;
     }
 }

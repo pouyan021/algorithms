@@ -22,34 +22,34 @@ public class ContractionMinCut {
 
 
     public void contract() {
-        int count = 0;
-        List<Integer> edgesU;
-        List<Integer> edgesV;
-        while (graph.getEdges().asMap().size() > 2) {
-            int u = random.nextInt(Collections.max(graph.getEdges().asMap().keySet()));
-            edgesU = (List<Integer>) graph.getEdges().get(u);
-            int v = 0;
-            if (!edgesU.isEmpty()) {
-                v = edgesU.get(random.nextInt(edgesU.size()));
-            }
-            edgesV = (List<Integer>) graph.getEdges().get(v);
-            List<Integer> newVertexEdges;
-            if (v != 0 && u != v) {
-                int finalV = v;
-                newVertexEdges = new ArrayList<>(Stream.concat(edgesU.stream(), edgesV.stream())
-                        .filter(e -> e != finalV)
-                        .filter(e -> e != u)
-                        .toList());
-                graph.getEdges().removeAll(v);
-                graph.getEdges().removeAll(u);
-                graph.getEdges().putAll(u, newVertexEdges);
-                graph.getEdges().values().removeIf(a -> Objects.equals(a, finalV));
-            }
-
-        }
-
-        count += graph.getEdges().values().size();
-        counts.add(count);
+//        int count = 0;
+//        List<Integer> edgesU;
+//        List<Integer> edgesV;
+//        while (graph.getEdges().asMap().size() > 2) {
+//            int u = random.nextInt(Collections.max(graph.getEdges().asMap().keySet()));
+//            edgesU = (List<Integer>) graph.getEdges().get(u);
+//            int v = 0;
+//            if (!edgesU.isEmpty()) {
+//                v = edgesU.get(random.nextInt(edgesU.size()));
+//            }
+//            edgesV = (List<Integer>) graph.getEdges().get(v);
+//            List<Integer> newVertexEdges;
+//            if (v != 0 && u != v) {
+//                int finalV = v;
+//                newVertexEdges = new ArrayList<>(Stream.concat(edgesU.stream(), edgesV.stream())
+//                        .filter(e -> e != finalV)
+//                        .filter(e -> e != u)
+//                        .toList());
+//                graph.getEdges().removeAll(v);
+//                graph.getEdges().removeAll(u);
+//                graph.getEdges().putAll(u, newVertexEdges);
+//                graph.getEdges().values().removeIf(a -> Objects.equals(a, finalV));
+//            }
+//
+//        }
+//
+//        count += graph.getEdges().values().size();
+//        counts.add(count);
     }
     public Integer retrieveCount() {
         return Collections.min(counts);

@@ -1,46 +1,29 @@
 package com.pouyankhodabakhsh.algorithm;
 
-import com.google.common.collect.Multimap;
-
 import java.io.Serializable;
-import java.util.List;
+import java.util.LinkedList;
 
 public class Graph implements Serializable {
-    private List<Integer> vertexList;
-    private Multimap<Integer, Integer> edges;
+    private int vertex;
+    public LinkedList[] edge;
 
-    public List<Integer> getVertexList() {
-        return vertexList;
-    }
-
-    public void setVertexList(List<Integer> vertexList) {
-        this.vertexList = vertexList;
-    }
-
-    public Multimap<Integer, Integer> getEdges() {
-        return edges;
-    }
-
-    public void setEdges(Multimap<Integer, Integer> edges) {
-        this.edges = edges;
-    }
-
-    public void removeEdge(String u , String v) {
-        edges.remove(u, Integer.parseInt(v));
-        edges.remove(v, Integer.parseInt(u));
-    }
-
-    public void removeVertex(int v) {
-        vertexList.remove(v);
-    }
-
-    public void addVertex(Integer uv) {
-        vertexList.add(uv);
-    }
-
-    public void addEdge(Integer v, List<Integer> val) {
-        for (Integer i : val) {
-            edges.put(v, i);
+    public Graph(int vertex) {
+        this.vertex = vertex;
+        edge = new LinkedList[vertex];
+        for (int i = 1; i < vertex; i++) {
+          edge[i] = new LinkedList<>();
         }
+    }
+
+    public void addEdge(int source, int destination) {
+        edge[source].add(destination);
+    }
+
+    public int getVertex() {
+        return vertex;
+    }
+
+    public void setVertex(int vertex) {
+        this.vertex = vertex;
     }
 }
